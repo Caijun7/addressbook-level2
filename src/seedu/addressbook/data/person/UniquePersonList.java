@@ -123,6 +123,13 @@ public class UniquePersonList implements Iterable<Person> {
     }
 
     /**
+     *  Sorts all persons in list by name
+     */
+    public void sortByName() {
+        Collections.sort(internalList);
+    }
+
+    /**
      * Clears all persons in list.
      */
     public void clear() {
