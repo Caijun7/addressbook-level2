@@ -73,7 +73,7 @@ public class TextUi {
         if (resultPersons.isPresent()) {
             showPersonListView(resultPersons.get());
         }
-        showToUser(formatter.getFeedbackToUserFormat(result.feedbackToUser));
+        showToUser(formatter.getFeedbackToUserFormat(result));
     }
 
     /**
@@ -81,7 +81,8 @@ public class TextUi {
      * Private contact details are hidden.
      */
     private void showPersonListView(List<? extends ReadOnlyPerson> persons) {
-        showToUserAsIndexedList(formatter.getPersonsListFormat(persons));
+        List<String> formattedPersons = formatter.getPersonsListFormat(persons);
+        showToUserAsIndexedList(formattedPersons);
     }
 
     /** Shows a list of strings to the user, formatted as an indexed list. */
